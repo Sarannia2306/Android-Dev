@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="48dp"
+        android:text="What is your exercise level?"
+        android:textSize="20dp" />
+
+    <SeekBar
+        android:id="@+id/LevelSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="89dp"
+        android:layout_marginEnd="0dp"
+        android:max="2" />
+
+    <SeekBar
+        android:id="@+id/ExerciseSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="241dp"
+        android:layout_marginEnd="-2dp"
+        android:max="2" />
+
+    <SeekBar
+        android:id="@+id/exerciseSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="413dp"
+        android:layout_marginEnd="-1dp"
+        android:max="2" />
+
+    <TextView
+        android:id="@+id/exerciseLevel0"
+        android:layout_width="69dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="597dp"
+        android:text="Beginner" />
+
+    <TextView
+        android:id="@+id/exerciseDay1"
+        android:layout_width="61dp"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="438dp"
+        android:text="0-1 Day" />
+
+    <TextView
+        android:id="@+id/day1"
+        android:layout_width="61dp"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="256dp"
+        android:text="0-1 Day" />
+
+    <TextView
+        android:id="@+id/exerciseLevel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="167dp"
+        android:layout_marginBottom="597dp"
+        android:text="Intermediate" />
+
+
+    <TextView
+        android:id="@+id/exerciseDay2"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="178dp"
+        android:layout_marginBottom="434dp"
+        android:text="3-4 Days" />
+
+    <TextView
+        android:id="@+id/day2"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="178dp"
+        android:layout_marginBottom="254dp"
+        android:text="3-4 Days" />
+
+
+    <TextView
+        android:id="@+id/day3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="596dp"
+        android:text="Advanced" />
+
+    <TextView
+        android:id="@+id/exerciseDay3"
+        android:layout_width="42dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="448dp"
+        android:text="Daily" />
+
+    <TextView
+        android:id="@+id/exerciseDay5"
+        android:layout_width="42dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="266dp"
+        android:text="Daily" />
+
+    <TextView
+        android:id="@+id/frequent_days"
+        android:layout_width="382dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="195dp"
+        android:layout_marginEnd="15dp"
+        android:text="How frequent do you exercise in a week?"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/exercise_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="351dp"
+        android:layout_marginEnd="24dp"
+        android:text="How many days in a week you want to exercise?"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/selectDayButton"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="233dp"
+        android:backgroundTint="@color/LightBlue"
+        android:layout_marginBottom="117dp"
+        android:text="Select Day" />
+
+    <Button
+        android:id="@+id/selectTimeButton"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="61dp"
+        android:layout_marginBottom="117dp"
+        android:backgroundTint="@color/LightBlue"
+        android:text="Select Time" />
+
+    <TextView
+        android:id="@+id/selectedDayTimeTextView"
+        android:layout_width="400dp"
+        android:layout_height="36dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="169dp"
+        android:text="Select your desired Day and Time in a week "
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/getStartedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="0dp"
+        android:backgroundTint="@color/royalblue"
+        android:text="Let's get started" />
+
+    <Switch
+        android:id="@+id/reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="79dp"
+        android:text="Reminder" />
+
+
+</RelativeLayout>

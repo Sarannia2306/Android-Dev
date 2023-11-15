@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WorkoutFragment"
+    android:background="@color/azure">
+
+    <ImageView
+        android:id="@+id/abs"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="110dp"
+        android:onClick="onImageAbs"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/legs"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="239dp"
+        android:layout_marginTop="107dp"
+        android:layout_marginEnd="44dp"
+        android:onClick="onImageLegs"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/arms"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="235dp"
+        android:layout_marginBottom="145dp"
+        android:onClick="onImageArms"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/fullbody"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="245dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="143dp"
+        android:onClick="onImageFullbody"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textAbs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/abs"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="277dp"
+        android:text="Abs"
+        android:textAlignment="center"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textLegs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/legs"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="286dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginEnd="82dp"
+        android:text="Legs"
+        android:textAlignment="center"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textArms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="88dp"
+        android:layout_marginEnd="275dp"
+        android:layout_marginBottom="116dp"
+        android:text="Arms"
+        android:textAlignment="center"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textFullbody"
+        android:layout_width="112dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="255dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="116dp"
+        android:text="Full Body"
+        android:textAlignment="center"
+        android:textSize="20dp" />
+</RelativeLayout>

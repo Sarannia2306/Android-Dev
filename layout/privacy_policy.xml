@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/header"/>
+
+    <TextView
+        android:id="@+id/Privacy"
+        android:layout_width="match_parent"
+        android:layout_height="648dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="0dp"
+        android:text="
+            \nEffective Date: [8.8.2008]
+
+            \nAt 24Gym, we are committed to protecting your privacy and ensuring the security of your personal information. \nThis Privacy Policy outlines the types of information we collect, how it is used, and the steps we take to safeguard your data.\n
+
+            \n1. Information We Collect \n
+
+            We may collect the following types of personal information when you interact with our services:
+            \nPersonal Identification Information: This includes your name, address, phone number, email address, and other contact details.
+
+            \nPayment Information: When you make a purchase or sign up for a membership, we collect payment information, including credit card details.
+
+            \nHealth and Fitness Data: In order to provide personalized fitness plans, we may collect information about your health and fitness goals, exercise routines, and health conditions.
+
+            \nUsage Information: We collect data about how you interact with our website and mobile applications, including the pages you visit and the features you use.\n
+
+            \n2. How We Use Your Information
+
+            \nWe use the collected information for the following purposes:
+
+            \nMembership Management: To process membership applications, payments, and renewals.
+
+            \nPersonalized Services: To provide you with personalized fitness plans and recommendations based on your goals and preferences.
+
+            \nCommunication: To communicate with you about your membership, promotions, and important updates.
+
+            \nAnalytics: To analyze and improve the performance of our services.\n
+
+            \n3. Information Sharing
+
+            \nWe do not sell or rent your personal information to third parties. However, we may share your information with:
+
+            \nService Providers: We may share your information with third-party service providers who assist us in operating our website, conducting business, or servicing you.
+
+            \nLegal Compliance: We may disclose information when required by law or to protect our rights.\n
+
+            \n4. Security Measures
+            \nWe take the security of your information seriously. \nWe implement a variety of security measures to maintain the safety of your personal information.\n
+
+            \n5. Your Choices
+
+            \nYou have the right to:
+
+            \nAccess, correct, or delete your personal information.
+
+            \nOpt-out of receiving promotional communications.\n
+
+            \n6. Updates to the Privacy Policy
+
+            \nWe may update this Privacy Policy from time to time. The most recent version will be posted on our website with the effective date.\n
+
+            \n7. Contact Us
+
+            \nIf you have any questions or concerns about our Privacy Policy, please contact us at [Your Contact Information].
+
+            \nThank you for trusting 24Gym with your personal information. We are dedicated to providing you with a secure and enjoyable fitness experience."
+        android:textAlignment="center"
+        android:textDirection="ltr"
+        android:textColor="@color/black"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/Privacy_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="146dp"
+        android:layout_marginTop="7dp"
+        android:text="Privacy Policy"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+</RelativeLayout>

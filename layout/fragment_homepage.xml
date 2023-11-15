@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/Homepage"
+    android:background="@color/LightBlue"
+    tools:context=".HomeFragment">
+
+
+    <include
+        layout="@layout/header"/>
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="362dp"
+        android:layout_height="331dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="345dp"
+        android:background="@color/white" />
+
+    <TextView
+        android:id="@+id/Welcome"
+        android:layout_width="223dp"
+        android:layout_height="132dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="98dp"
+        android:background="@color/white"
+        android:text="Step into a world of fitness tailored just for you! Unleash your potential, achieve your goals, and make every workout count with our cutting-edge fitness app. Welcome aboard!"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="148dp"
+        android:layout_height="149dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="253dp"
+        android:layout_marginTop="493dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="89dp"
+        tools:src="@drawable/arnold" />
+
+    <TextView
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="9dp"
+        android:label="@string/app_name"
+        android:text="24gym"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+
+</RelativeLayout>

@@ -1,122 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:gravity="center"
     android:layout_height="match_parent"
-    tools:context=".Login">
-
-    <TextView
-        android:id="@+id/greetings"
-        android:layout_width="wrap_content"
-        android:layout_height="135dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="240dp"
-        android:layout_marginBottom="480dp"
-        android:text="Welcome back! Looks cooler than ever!!"
-        android:textSize="24sp"
-        android:textStyle="bold|italic" />
+    android:background="@color/azure"
+    tools:context=".LoginActivity">
 
     <ImageView
-        android:id="@+id/app"
-        android:layout_width="208dp"
-        android:layout_height="231dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="435dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:id="@+id/imageView"
+        android:layout_width="171dp"
+        android:layout_height="88dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/logo" />
 
-    <EditText
-        android:id="@+id/EmailAddress"
-        android:layout_width="283dp"
+    <TextView
+        android:text="@string/login"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/royalblue"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/email"
+            android:background="@android:drawable/editbox_background"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="310dp"
-        android:ems="10"
-        android:hint="Email:"
-        android:inputType="textEmailAddress" />
+        android:hint="@string/password">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/Password"
-        android:layout_width="286dp"
-        android:layout_height="51dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="254dp"
-        android:ems="10"
-        android:hint="Password:"
-        android:inputType="textPassword" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:inputType="textPassword"
+                android:hint="@string/password"
+                android:background="@android:drawable/editbox_background"
+                tools:ignore="TextContrastCheck,VisualLintTextFieldSize,TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/show_pass_btn"
+                android:layout_width="45dp"
+                android:layout_height="match_parent"
+                android:alpha=".5"
+                android:onClick="ShowHidePass"
+                android:padding="@dimen/dp5"
+                android:src="@drawable/visibility_24" />
+
+        </LinearLayout>
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="193dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="161dp"
-        android:background="@color/royalblue"
-        android:text="Login" />
-
-    <TextView
-        android:id="@+id/Newuser"
-        android:layout_width="89dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="109dp"
-        android:layout_marginBottom="125dp"
-        android:text="New user?"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/Register"
-        android:layout_width="149dp"
-        android:layout_height="35dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="199dp"
-        android:layout_marginBottom="112dp"
-        android:clickable="true"
-        android:onClick="openRegistrationPage"
-        android:text="Register Now!"
-        android:textColor="#0F52BA"
-        android:textSize="16sp"
-        android:textStyle="italic" />
-
-    <CheckBox
-        android:id="@+id/rememberMeCheckBox"
+        android:id="@+id/btn_login"
         android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="63dp"
-        android:layout_marginBottom="224dp"
-        android:text="Remember Me" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="170dp"
+        android:text="@string/login"
+        android:backgroundTint="@color/royalblue" />
 
     <TextView
-        android:id="@+id/btnAdmin"
-        android:layout_width="55dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="346dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="9dp"
-        android:clickable="true"
-        android:onClick="openAdminPage"
-        android:text="Admin"
-        android:textColor="#0F52BA"
-        android:textSize="16sp"
-        android:textStyle="italic" />
+        android:id="@+id/registerNow"
+        android:layout_width="166dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="@string/register"
+        android:textColor="@color/royalblue"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
 
-</RelativeLayout>
+</LinearLayout>

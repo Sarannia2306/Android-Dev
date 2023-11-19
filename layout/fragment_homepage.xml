@@ -5,24 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/Homepage"
-    android:background="@color/LightBlue"
+    android:background="@color/azure"
     tools:context=".HomeFragment">
 
 
-    <include
-        layout="@layout/header"/>
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@color/royalblue"
+        android:label="@string/app_name"
+        android:minHeight="40dp"/>
+
+    <TextView
+        android:id="@+id/loginIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="-6dp"
+        android:background="#00FFFFFF"
+        android:clickable="true"
+        android:drawablePadding="8dp"
+        android:focusable="true"
+        android:padding="8dp"
+        android:text="Login"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
 
     <CalendarView
         android:id="@+id/calendarView"
-        android:layout_width="362dp"
-        android:layout_height="331dp"
+        android:layout_width="367dp"
+        android:layout_height="433dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginBottom="345dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginBottom="216dp"
         android:background="@color/white" />
 
     <TextView
@@ -32,27 +60,24 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="162dp"
-        android:layout_marginBottom="98dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="66dp"
         android:background="@color/white"
         android:text="Step into a world of fitness tailored just for you! Unleash your potential, achieve your goals, and make every workout count with our cutting-edge fitness app. Welcome aboard!"
         android:textAlignment="center"
         android:textColor="@color/black" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="148dp"
-        android:layout_height="149dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:id="@+id/logo"
+        android:layout_width="171dp"
+        android:layout_height="88dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="253dp"
-        android:layout_marginTop="493dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="89dp"
-        tools:src="@drawable/arnold" />
+        android:layout_gravity="center"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="90dp"
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:layout_width="104dp"

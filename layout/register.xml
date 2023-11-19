@@ -1,173 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    android:background="@color/azure"
+    tools:context=".RegistrationActivity">
 
-    <EditText
-        android:id="@+id/EmailAddress"
-        android:layout_width="289dp"
-        android:layout_height="45dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="207dp"
-        android:ems="10"
-        android:hint="Email:"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/Password"
-        android:layout_width="288dp"
-        android:layout_height="49dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="264dp"
-        android:ems="10"
-        android:hint="Password:"
-        android:inputType="textPassword" />
-
-    <EditText
-        android:id="@+id/RePassword"
-        android:layout_width="288dp"
-        android:layout_height="52dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="324dp"
-        android:ems="10"
-        android:hint="Re-enter Password:"
-        android:inputType="textPassword" />
-
-    <EditText
-        android:id="@+id/Name"
-        android:layout_width="283dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="97dp"
-        android:ems="10"
-        android:hint="Name:"
-        android:inputType="textPersonName" />
-
-    <EditText
-        android:id="@+id/age"
-        android:layout_width="wrap_content"
-        android:layout_height="49dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="137dp"
-        android:ems="10"
-        android:hint="Age:"
-        android:inputType="number" />
-
-    <EditText
-        android:id="@+id/weight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="63dp"
-        android:layout_marginTop="438dp"
-        android:layout_marginEnd="138dp"
-        android:ems="10"
-        android:hint="Weight:"
-        android:inputType="numberDecimal" />
-
-    <EditText
-        android:id="@+id/height"
-        android:layout_width="wrap_content"
-        android:layout_height="46dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="63dp"
-        android:layout_marginTop="383dp"
-        android:layout_marginEnd="138dp"
-        android:ems="10"
-        android:hint="Height:"
-        android:inputType="numberDecimal" />
-
-    <RadioGroup
-        android:id="@+id/genderRadioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="143dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="196dp"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/maleRadioBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Male" />
-
-        <RadioButton
-            android:id="@+id/femaleRadioBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Female" />
-
-        <RadioButton
-            android:id="@+id/otherRadioBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Other" />
-    </RadioGroup>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="171dp"
+        android:layout_height="88dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/logo" />
 
     <TextView
-        android:id="@+id/gender"
-        android:layout_width="wrap_content"
-        android:layout_height="28dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="61dp"
-        android:layout_marginEnd="280dp"
-        android:layout_marginBottom="201dp"
-        android:text="Gender:"
-        android:textSize="20dp" />
+        android:text="@string/register"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/royalblue"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/dateOfBirthEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="261dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginBottom="139dp"
-        android:focusable="false"
-        android:hint="Date of Birth" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/email"
+            android:background="@android:drawable/editbox_background" />
 
-    <Button
-        android:id="@+id/chooseDateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="166dp"
-        android:layout_marginBottom="137dp"
-        android:backgroundTint="@color/LightBlue"
-        android:text="Choose Date of Birth" />
 
-    <Button
-        android:id="@+id/btnRegister"
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="4dp"
+        android:hint="@string/password">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:inputType="textPassword"
+                android:hint="@string/password"
+                android:background="@android:drawable/editbox_background"/>
+
+            <ImageView
+                android:id="@+id/pass_visible"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:alpha=".5"
+                android:onClick="ShowHidePass"
+                android:padding="@dimen/dp5"
+                android:src="@drawable/visibility_24" />
+
+        </LinearLayout>
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/registerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="170dp"
+        android:text="@string/register"
         android:backgroundTint="@color/royalblue"
-        android:text="Register" />
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
+    <TextView
+        android:id="@+id/loginBtn"
+        android:layout_width="99dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:text="@string/login"
+        android:textSize="20sp"
+        android:textColor="@color/royalblue"
+        android:textStyle="bold|italic" />
 
-</RelativeLayout>
+</LinearLayout>

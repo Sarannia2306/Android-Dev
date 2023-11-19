@@ -1,55 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MeFragment">
+    android:background="@color/azure"
+    android:visibility="visible"
+    tools:context=".Me_Fragment"
+    tools:visibility="visible">
 
-    <include
-        layout="@layout/header_me" />
-
-    <TextView
-        android:id="@+id/User"
-        android:layout_width="106dp"
-        android:layout_height="65dp"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="412dp"
+        android:layout_height="63dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="74dp"
-        android:text="name"
-        android:textColor="@color/white"
-        android:textSize="40dp"
-        android:textStyle="bold|italic" />
+        android:layout_alignParentEnd="true"
+        android:background="@color/royalblue"
+        android:label="@string/app_name"
+        android:minHeight="40dp"
+        tools:ignore="MissingConstraints" />
 
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="207dp"
+        android:layout_height="63dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/logoutIcon"
+        android:src="@drawable/baseline_login_24"
+        tools:ignore="HardcodedText,MissingConstraints"/>
 
     <TextView
-        android:id="@+id/IBM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="107dp"
-        android:layout_marginTop="324dp"
-        android:text="IBM Calculator"
-        android:textSize="30dp"
-        android:clickable="true"
-        android:onClick="onIBMClick"/>
+        android:id="@+id/myTextView"
+        android:layout_width="148dp"
+        android:layout_height="30dp"
+        android:text="User Profile"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.119" />
 
-    <TextView
-        android:id="@+id/Privacy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="112dp"
-        android:layout_marginBottom="285dp"
-        android:text="Privacy Policy"
-        android:textSize="30dp"
-        android:clickable="true"
-        android:onClick="onPrivacyClick"/>
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="400dp"
+        android:layout_height="410dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.601">
 
-</RelativeLayout>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="356dp"
+                android:layout_height="match_parent"
+                android:text="@string/Name"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/age"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/Age"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/dob"
+                android:layout_width="195dp"
+                android:layout_height="match_parent"
+                android:text="@string/DOB"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/weight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/Weight"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/height"
+                android:layout_width="333dp"
+                android:layout_height="match_parent"
+                android:text="@string/Height"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="333dp"
+                android:layout_height="match_parent"
+                android:text="@string/Gender"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="358dp"
+            android:layout_height="77dp">
+
+            <TextView
+                android:id="@+id/BMI"
+                android:layout_width="333dp"
+                android:layout_height="60dp"
+                android:clickable="true"
+                android:onClick="onIBMClick"
+                android:text="IBM Calculator"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="358dp"
+            android:layout_height="77dp">
+
+            <TextView
+                android:id="@+id/Privacy"
+                android:layout_width="397dp"
+                android:layout_height="59dp"
+                android:clickable="true"
+                android:onClick="onPrivacyClick"
+                android:text="Privacy Policy"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </TableRow>
+
+
+    </TableLayout>
+
+    <ImageButton
+        android:id="@+id/reminder"
+        android:layout_width="53dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/white"
+        android:contentDescription="reminder"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/baseline_reminder_24" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

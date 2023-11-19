@@ -1,6 +1,10 @@
 package com.example.fitness;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,6 +26,8 @@ public class AbsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private WorkoutAdapter adapter;
     private DatabaseReference databaseReference;
+    private Button startButton;
+    private ImageButton backIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +35,8 @@ public class AbsActivity extends AppCompatActivity {
         setContentView(R.layout.abs);
 
         recyclerView = findViewById(R.id.recyclerView);
+        startButton = findViewById(R.id.abs_btn);
+        backIcon = findViewById(R.id.backIcon);
 
         // Initialize the adapter
         adapter = new WorkoutAdapter(workoutList);
@@ -65,5 +73,25 @@ public class AbsActivity extends AppCompatActivity {
                 // Handle any errors here
             }
         });
+
+        // Set a click listener for the start button
+        startButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Start Abs1Activity when the button is clicked
+                startActivity(new Intent(AbsActivity.this, Abs1Activity.class));
+            }
+        });
+
+
+        // Set a click listener for the backIcon button
+        backIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Navigate back to the previous activity
+                onBackPressed();
+            }
+        });
+
     }
 }

@@ -1,147 +1,89 @@
 package com.example.fitness;
 
-import android.app.AlarmManager;
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
-import android.app.PendingIntent;
-import android.app.TimePickerDialog;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.Switch;
-import android.widget.TextView;
-import android.widget.TimePicker;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.SimpleDateFormat;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Calendar;
-import java.util.Locale;
+import java.util.Objects;
 
 public class UserInfoActivity extends AppCompatActivity {
 
-    private Button getStartedButton;
-    private Button selectDayButton;
-    private Button selectTimeButton;
-    private TextView selectedDayTimeTextView;
-    private Switch reminderSwitch;
+    Button dob;
+    TextInputEditText name, age, weight, height;
+    Spinner gender;
+    Button btn_userinfosave;
+    Calendar calendar = Calendar.getInstance();
 
-    private Calendar selectedCalendar;
-    private boolean isReminderEnabled;
-
-    private static final String PREFS_NAME = "MyPrefsFile";
-    private static final String REMINDER_KEY = "reminderKey";
-
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.user_info); // Set the user_info layout
+        FirebaseAuth dbAuth = FirebaseAuth.getInstance();
+        setContentView(R.layout.user_info);
 
-        getStartedButton = findViewById(R.id.getStartedButton);
-        selectDayButton = findViewById(R.id.selectDayButton);
-        selectTimeButton = findViewById(R.id.selectTimeButton);
-        selectedDayTimeTextView = findViewById(R.id.selectedDayTimeTextView);
-        reminderSwitch = findViewById(R.id.reminder);
+        name = findViewById(R.id.name);
+        age = findViewById(R.id.age);
+        weight = findViewById(R.id.weight);
+        height = findViewById(R.id.height);
+        gender = findViewById(R.id.gender);
+        dob = findViewById(R.id.dob);
+        btn_userinfosave = findViewById(R.id.btn_userinfoSave);
 
-        selectedCalendar = Calendar.getInstance();
+        dob.setText("Date of Birth");
+        dob.setOnClickListener(v -> showDatePicker());
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.Gender, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        gender.setAdapter(adapter);
 
-        reminderSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            isReminderEnabled = isChecked;
-            saveReminderState(isReminderEnabled);
-        });
+        btn_userinfosave.setOnClickListener(view -> {
+            String Name = Objects.requireNonNull(name.getText()).toString();
+            String Age = Objects.requireNonNull(age.getText()).toString();
+            String Weight = Objects.requireNonNull(weight.getText()).toString();
+            String Height = Objects.requireNonNull(height.getText()).toString();
+            String Gender = gender.getSelectedItem().toString();
+            String Dob = dob.getText().toString();
 
-        // Load the reminder state from SharedPreferences
-        isReminderEnabled = loadReminderState();
-        reminderSwitch.setChecked(isReminderEnabled);
+            AdminViewUserDataClass dataClass = new AdminViewUserDataClass(Name, Age, Height, Weight, Dob, Gender);
+            String user_id = Objects.requireNonNull(dbAuth.getCurrentUser()).getUid();
 
-        selectDayButton.setOnClickListener(view -> showDatePicker());
+            FirebaseDatabase.getInstance().getReference("Users").child(user_id).child("User Details")
+                    .setValue(dataClass)
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(UserInfoActivity.this, "Saved", Toast.LENGTH_SHORT).show();
 
-        selectTimeButton.setOnClickListener(view -> showTimePicker());
-
-        getStartedButton.setOnClickListener(view -> {
-            setReminder();
-            // Handle the click action to switch to FragmentsActivity
-            Intent intent = new Intent(UserInfoActivity.this, Navigation_bottom.class);
-            startActivity(intent);
+                            Intent intent = new Intent(UserInfoActivity.this, Navigation_bottom.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    })
+                    .addOnFailureListener(e -> Toast.makeText(UserInfoActivity.this, Objects.requireNonNull(e.getMessage())
+                            , Toast.LENGTH_SHORT).show());
         });
     }
 
     private void showDatePicker() {
-        DatePickerDialog datePickerDialog = new DatePickerDialog(
-                this,
-                (datePicker, year, month, day) -> {
-                    selectedCalendar.set(year, month, day);
-                    updateSelectedDayTimeText();
-                },
-                selectedCalendar.get(Calendar.YEAR),
-                selectedCalendar.get(Calendar.MONTH),
-                selectedCalendar.get(Calendar.DAY_OF_MONTH)
-        );
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+
+        @SuppressLint("SetTextI18n") DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                (view, year1, monthOfYear, dayOfMonth1) -> dob.setText
+                        (dayOfMonth1 + "/" + (monthOfYear + 1) + "/" + year1), year, month, dayOfMonth);
 
         datePickerDialog.show();
     }
-
-    private void showTimePicker() {
-        TimePickerDialog timePickerDialog = new TimePickerDialog(
-                this,
-                (timePicker, hourOfDay, minute) -> {
-                    selectedCalendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
-                    selectedCalendar.set(Calendar.MINUTE, minute);
-                    updateSelectedDayTimeText();
-                },
-                selectedCalendar.get(Calendar.HOUR_OF_DAY),
-                selectedCalendar.get(Calendar.MINUTE),
-                false // 24-hour format
-        );
-
-        timePickerDialog.show();
-    }
-
-    private void updateSelectedDayTimeText() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm a", Locale.getDefault());
-        String formattedDateTime = dateFormat.format(selectedCalendar.getTime());
-        selectedDayTimeTextView.setText("Selected Date and Time: " + formattedDateTime);
-    }
-
-    private void setReminder() {
-        if (isReminderEnabled) {
-            // Get the time in milliseconds
-            long reminderTimeMillis = selectedCalendar.getTimeInMillis();
-
-            //Intent for the AlarmReceiver class
-            Intent intent = new Intent(this, AlarmReceiver.class);
-
-            // Create a PendingIntent to be triggered when the alarm goes off
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(
-                    this,
-                    0,
-                    intent,
-                    PendingIntent.FLAG_UPDATE_CURRENT
-            );
-
-            // Get the AlarmManager service
-            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-
-            // Set the alarm to start at the specified time
-            alarmManager.set(AlarmManager.RTC_WAKEUP, reminderTimeMillis, pendingIntent);
-
-            Toast.makeText(this, "Reminder set successfully!", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void saveReminderState(boolean isEnabled) {
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putBoolean(REMINDER_KEY, isEnabled);
-        editor.apply();
-    }
-
-    private boolean loadReminderState() {
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
-        return settings.getBoolean(REMINDER_KEY, false);
-    }
 }
+
